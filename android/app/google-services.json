@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "234432157489",
+    "project_id": "enoikiou",
+    "storage_bucket": "enoikiou.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234432157489:android:5a715cbc3816c2bf410210",
+        "android_client_info": {
+          "package_name": "com.example.enoikiou"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3aePanRIpdLNO8-Dvskr76MV-Js6tEng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
