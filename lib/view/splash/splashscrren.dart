@@ -1,4 +1,6 @@
-import 'package:enoikiou/view/loginscreen/loginscreen.dart';
+
+import 'package:enoikiou/view/welcome/welcome.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -16,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => Login(),
+            builder: (context) => Welcome(),
           ));
     });
     super.initState();
@@ -24,11 +26,24 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Text("ENOIKIOU",style: TextStyle(fontSize: 20,color: Colors.white),),
-      ),
+    bool selected = false;
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selected = !selected;
+        });
+      },
+      child: Center(
+        
+          child: AnimatedAlign(
+            // ignore: dead_code
+            alignment: selected ? Alignment.bottomCenter : Alignment.bottomLeft,
+            duration: const Duration(seconds: 5),
+            curve: Curves.fastOutSlowIn,
+            child: Image.asset("assets/enoikiou-high-resolution-logo-white.jpg")
+          ),
+        ),
+      
     );
   }
 }

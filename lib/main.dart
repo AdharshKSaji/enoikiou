@@ -1,5 +1,10 @@
+
+import 'package:enoikiou/controller/bookcontroller.dart';
+import 'package:enoikiou/controller/favoriecontroller.dart';
+import 'package:enoikiou/controller/forgotpasswordcontroller.dart';
 import 'package:enoikiou/controller/logincontroller.dart';
 import 'package:enoikiou/controller/registercontroller.dart';
+import 'package:enoikiou/controller/savedcontroller.dart';
 import 'package:enoikiou/view/splash/splashscrren.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,7 +35,13 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => LoginScreenController(),
-        )
+          
+        ),
+        ChangeNotifierProvider(create: (context) => Favoritecontroller(),),
+        ChangeNotifierProvider(create: (context) => CarBookingController()),
+        ChangeNotifierProvider(create: (context) => SavedController(),),
+        ChangeNotifierProvider(create: (context) => ForgotPasswordController(),)
+
       ],
       child: MaterialApp(
         home: StreamBuilder(
