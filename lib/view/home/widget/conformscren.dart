@@ -1,9 +1,11 @@
 
 import 'package:enoikiou/controller/bookcontroller.dart';
+import 'package:enoikiou/view/paymentscreen/payment.dart';
 import 'package:flutter/material.dart';
 
 
 class ConformScreen extends StatefulWidget {
+  // final CarModel Cars;
   ConformScreen({super.key});
 
   @override
@@ -16,28 +18,17 @@ class _ConformScreenState extends State<ConformScreen> {
     final provider = CarBookingController.of(context);
     final finalList = provider.favorateslist;
 
-    productQuantity(IconData icon, int index) {
-      return GestureDetector(
-        onTap: () {
-          setState(() {
-             
-          });
-        },
-        child: Icon(
-          icon,
-        ),
-      );
-    }
 
     return Scaffold(
       // for total and check out
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         title: Text(
-          "My Cart",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          "My Bookings",
+          style: TextStyle(fontWeight: FontWeight.bold,
+          color: Colors.white),
         ),
         centerTitle: true,
       ),
@@ -68,12 +59,12 @@ class _ConformScreenState extends State<ConformScreen> {
                                 height: 100,
                                 width: 90,
                                 decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 206, 157, 214),
+                                  color: Colors.white,
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 padding: EdgeInsets.all(10),
-                                child: Image.asset(
-                                  cartItems.image,
+                                child: Image.network(
+                                  cartItems.image,fit: BoxFit.fill,
                                 ),
                               ),
                               SizedBox(width: 10),
@@ -99,7 +90,7 @@ class _ConformScreenState extends State<ConformScreen> {
                                   ),
                                   SizedBox(height: 8),
                                   Text(
-                                    "\₹${cartItems}",
+                                    "\₹${cartItems.price}",
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -124,35 +115,7 @@ class _ConformScreenState extends State<ConformScreen> {
                                 setState(() {});
                               }, child:Text("Cancel Car..!",style: TextStyle(color: Colors.red),) )
                             
-                            // SizedBox(height: 10),
-                            // Container(
-                            //   height: 40,
-                            //   decoration: BoxDecoration(
-                            //     color: Color.fromARGB(255, 206, 157, 214),
-                            //     border: Border.all(
-                            //       color: Colors.grey.shade200,
-                            //       width: 2,
-                            //     ),
-                            //     borderRadius: BorderRadius.circular(20),
-                            //   ),
-                            //   child: Row(
-                            //     children: [
-                            //       SizedBox(width: 10),
-                            //       productQuantity(Icons.add, index),
-                            //       SizedBox(width: 10),
-                            //       Text(
-                            //         cartItems.image,
-                            //         style: TextStyle(
-                            //           color: Colors.black,
-                            //           fontWeight: FontWeight.bold,
-                            //         ),
-                            //       ),
-                            //       SizedBox(width: 10),
-                            //       productQuantity(Icons.remove, index),
-                            //       SizedBox(width: 10),
-                            //     ],
-                            //   ),
-                            // ),
+                         
                           ],
                         ),
                       )
@@ -161,6 +124,19 @@ class _ConformScreenState extends State<ConformScreen> {
                 },
               ),
             ),
+            BottomAppBar(color: Colors.black,
+            child: Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
+              color: Colors.blue),
+                child:TextButton(onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => payment()));
+                  
+                }, child: Text("Pay NOW ",style: 
+                TextStyle(
+                  color: Colors.white
+                ))
+              ))],
+            ),)
           ],
         ),
       ),

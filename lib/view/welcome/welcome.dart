@@ -15,7 +15,7 @@ class _WelcomeState extends State<Welcome> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.black,
       body: IntroductionScreen(
         scrollPhysics: BouncingScrollPhysics(),
         pages: [
@@ -61,7 +61,7 @@ class _WelcomeState extends State<Welcome> {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => Login(),
+                builder: (context) => LoginScreen(),
               ),
               (route) => false);
         },
@@ -69,7 +69,7 @@ class _WelcomeState extends State<Welcome> {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => Login(),
+                builder: (context) => LoginScreen(),
               ),
               (route) => false);
         },

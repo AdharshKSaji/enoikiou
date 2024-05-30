@@ -1,60 +1,34 @@
 
+import 'package:enoikiou/model/carmodel.dart';
 import 'package:flutter/material.dart';
 
 
-class Description extends StatelessWidget {
-  final String description;
-  const Description({super.key, required this.description});
+
+class descributionScreen extends StatelessWidget {
+  final CarModel car;
+  const descributionScreen({super.key, required this.car});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              width: 120,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              alignment: Alignment.center,
-              child: const Text(
-                "Description",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16),
-              ),
-            ),
-            const Text(
-              "Specifications",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 16),
-            ),
-            const Text(
-              "Reviews",
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 20),
+        Container(
+          height: 25,width: 100,
+          decoration: BoxDecoration(borderRadius: 
+         BorderRadius.circular(10),color: Colors.white ),child: Text("DESCRIPTION",style: 
+          TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+        ),SizedBox(height: 20,)
+        ,
         Text(
-          description,
+          car.description,
           style: TextStyle(
-            fontSize: 16,
-            color: Colors.grey,
+            color: Colors.white,
+    
+            
           ),
         ),
+       
       ],
     );
   }

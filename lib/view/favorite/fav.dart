@@ -46,7 +46,7 @@ class _FavoritescreenState extends State<Favoritescreen> {
                         child: Row(
                           children: [
                             Container(
-                              height: 90,
+                              height: 150,
                               width: 90,
                               decoration: BoxDecoration(
                                 // 
@@ -54,8 +54,8 @@ class _FavoritescreenState extends State<Favoritescreen> {
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               padding: EdgeInsets.all(10),
-                              child: Image.asset(
-                                favoritItems.image,
+                              child: Image.network(
+                                favoritItems.image,fit: BoxFit.fill,
                               ),
                             ),
                             SizedBox(width: 10),
@@ -92,25 +92,21 @@ class _FavoritescreenState extends State<Favoritescreen> {
                         ),
                       ),
                     ),
-                    Positioned(
-                      top: 50,
-                      right: 40,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              finalList.removeAt(index);
-                              setState(
-                                () {},
-                              );
-                            },
-                            child:
-                                Icon(Icons.delete, color: Colors.red, size: 25),
-                          ),
-                          GestureDetector()
-                        ],
-                      ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            finalList.removeAt(index);
+                            setState(
+                              () {},
+                            );
+                          },
+                          child:
+                              Icon(Icons.delete, color: Colors.red, size: 25),
+                        ),
+                        GestureDetector()
+                      ],
                     )
                   ],
                 );

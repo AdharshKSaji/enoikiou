@@ -1,11 +1,11 @@
-import 'package:enoikiou/model/carmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:enoikiou/model/carmodel.dart';
 
 class CarBookingController extends ChangeNotifier {
   final List<CarModel> favorateslist = [];
   List<CarModel> get favorites => favorateslist;
+
   void toggleFavorite(CarModel product) {
     if (favorateslist.contains(product)) {
       favorateslist.remove(product);
@@ -16,8 +16,11 @@ class CarBookingController extends ChangeNotifier {
   }
 
   bool isExist(CarModel product) {
-    final isExist = favorateslist.contains(product);
-    return isExist;
+    return favorateslist.contains(product);
+  }
+
+  double totalPrice() {
+    return favorateslist.fold(0.0, (sum, item) => sum + item.price);
   }
 
   static CarBookingController of(

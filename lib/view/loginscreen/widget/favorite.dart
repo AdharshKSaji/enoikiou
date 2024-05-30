@@ -69,7 +69,7 @@ class _FavoritescreenState extends State<Favoritescreen> {
                                 ),
                                 SizedBox(height: 5),
                                 Text(
-                                  favoritItems.price,
+                                  favoritItems.price.toString(),
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,

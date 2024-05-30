@@ -1,7 +1,6 @@
 import 'dart:developer';
-
 import 'package:enoikiou/model/carmodel.dart';
-import 'package:enoikiou/view/home/homescm.dart';
+import 'package:enoikiou/view/home/homescreen/homescreen.dart';
 import 'package:enoikiou/view/home/widget/bookappbar.dart';
 import 'package:enoikiou/view/home/widget/conformscren.dart';
 import 'package:flutter/material.dart';
@@ -87,11 +86,11 @@ class _CarBookingScreenState extends State<CarBookingScreen> {
                         
                       }, child: Text(("BACK TO HOME")))
 
-          
-        ],
-      ),
+         
+         ] )
 
-   ]) );
+        ]
+   ) );
   }
 
   Future<void> getLocationUpdates() async {

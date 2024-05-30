@@ -14,6 +14,11 @@ class DetailAppBar extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Row(
         children: [
+           IconButton(onPressed: () {
+              Navigator.pop(context);
+              
+            }, icon: Icon(Icons.arrow_back_ios)),
+            
           CircleAvatar(radius: 30,backgroundImage: AssetImage("assets/enoikiou-high-resolution-logo-white.jpg"),),
           
           
